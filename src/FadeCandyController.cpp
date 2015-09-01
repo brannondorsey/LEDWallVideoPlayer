@@ -1,8 +1,7 @@
 //
 //  FadeCandyController.cpp
-//  dolbySketch
 //
-//  Created by dantheman on 6/5/15.
+//  Created by Brannon Dorsey
 //
 //
 

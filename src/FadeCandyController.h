@@ -1,15 +1,13 @@
 //
 //  FadeCandyController.h
-//  dolbySketch
-//
-//  Created by dantheman on 6/5/15.
+// 
+//  Created by Brannon Dorsey
 //
 //
 
 #pragma once
 #include "ofMain.h"
 #include "OPC.h"
-#include "ofxFastFboReader.h"
 
 class FadeCandyController{
 public:
