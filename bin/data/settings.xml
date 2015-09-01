@@ -1,7 +1,4 @@
 <settings>
-    <side>left</side>
-    <lefthost>192.168.2.100</lefthost>
-    <righthost>192.168.2.101</righthost>
     <video>monday-left-240.mov</video>
     <debug>1</debug>
 </settings>

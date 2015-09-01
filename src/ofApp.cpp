@@ -3,17 +3,16 @@
 //--------------------------------------------------------------
 void ofApp::setup(){
     
-    ofSetFrameRate(24);
+    ofSetFrameRate(30);
     ofBackground(ofColor::black);
     
     settings.loadFile("settings.xml");
     settings.pushTag("settings");
     
-    std::string video = settings.getValue("video", "");
+    std::string video = "weekdays/tuesday.mov"; // settings.getValue("video", "");
     
     if (video == "") {
-        video = "weekdays/" + ofToString(ofClamp(ofGetWeekday(), 1, 5))
-            + "_" + settings.getValue("side", "left") + ".mov";
+        video = "weekdays/" + ofToString(ofClamp(ofGetWeekday(), 1, 5)) + ".mov";
     }
     
     player.loadMovie(video);
@@ -23,10 +22,11 @@ void ofApp::setup(){
     float aspect = player.getWidth() / player.getHeight();
     ofSetWindowShape(ofGetScreenWidth() / 2, (ofGetScreenWidth() / 2) / aspect);
     
-    std::string leftHost  = settings.getValue("lefthost", "192.168.2.100");
-    std::string rightHost = settings.getValue("righthost", "192.168.2.101");
+    leds.setup("192.168.2.100",
+               "192.168.2.101",
+               "192.168.2.102",
+               "192.168.2.103");
     
-    leds.setup(leftHost, rightHost);
     leds.connect();
     
     debug = settings.getValue("debug", 0);
@@ -52,7 +52,6 @@ void ofApp::update(){
 //--------------------------------------------------------------
 void ofApp::draw(){
     
-    ofLogNotice("draw") << "drawing...";
     if (debug) {
         ofSetColor(255, 255, 255);
         player.draw(0, 0, ofGetWidth(), ofGetHeight());

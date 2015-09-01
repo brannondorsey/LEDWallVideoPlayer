@@ -13,7 +13,11 @@ class FadeCandyController{
 public:
     
     ~FadeCandyController();
-    void setup(std::string host1, std::string host2);
+    void setup(std::string host1,
+               std::string host2,
+               std::string host3,
+               std::string host4);
+    
     void update(ofPixels& pixels);
     
     void turnOff();
