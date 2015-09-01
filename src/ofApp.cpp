@@ -10,10 +10,11 @@ void ofApp::setup(){
     settings.pushTag("settings");
     
     std::string video = settings.getValue("video", "");
-//    
-//    if (video == "") {
-//        video = "weekday/" + ofToString(ofClamp(ofGetWeekday() + 1, 1, 5));
-//    }
+    
+    if (video == "") {
+        video = "weekdays/" + ofToString(ofClamp(ofGetWeekday(), 1, 5))
+            + "_" + settings.getValue("side", "left") + ".mov";
+    }
     
     player.loadMovie(video);
     player.setLoopState(OF_LOOP_NORMAL);
@@ -23,7 +24,7 @@ void ofApp::setup(){
     ofSetWindowShape(ofGetScreenWidth() / 2, (ofGetScreenWidth() / 2) / aspect);
     
     std::string leftHost  = settings.getValue("lefthost", "192.168.2.100");
-    std::string rightHost = settings.getValue("lefthost", "192.168.2.101");
+    std::string rightHost = settings.getValue("righthost", "192.168.2.101");
     
     leds.setup(leftHost, rightHost);
     leds.connect();
@@ -33,6 +34,7 @@ void ofApp::setup(){
     if (debug) {
         ofSetLogLevel(OF_LOG_VERBOSE);
     }
+
 }
 
 //--------------------------------------------------------------
