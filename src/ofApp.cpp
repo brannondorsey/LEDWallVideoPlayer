@@ -3,7 +3,7 @@
 //--------------------------------------------------------------
 void ofApp::setup(){
     
-    ofSetFrameRate(30);
+    ofSetFrameRate(24);
     ofBackground(ofColor::black);
     
     settings.loadFile("settings.xml");
