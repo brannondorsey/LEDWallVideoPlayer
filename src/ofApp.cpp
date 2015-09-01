@@ -9,7 +9,13 @@ void ofApp::setup(){
     settings.loadFile("settings.xml");
     settings.pushTag("settings");
     
-    player.loadMovie(settings.getValue("video", ""));
+    std::string video = settings.getValue("video", "");
+//    
+//    if (video == "") {
+//        video = "weekday/" + ofToString(ofClamp(ofGetWeekday() + 1, 1, 5));
+//    }
+    
+    player.loadMovie(video);
     player.setLoopState(OF_LOOP_NORMAL);
 	player.play();
     
@@ -44,6 +50,7 @@ void ofApp::update(){
 //--------------------------------------------------------------
 void ofApp::draw(){
     
+    ofLogNotice("draw") << "drawing...";
     if (debug) {
         ofSetColor(255, 255, 255);
         player.draw(0, 0, ofGetWidth(), ofGetHeight());
