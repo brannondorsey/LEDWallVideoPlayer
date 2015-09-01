@@ -13,7 +13,7 @@ class FadeCandyController{
 public:
     
     ~FadeCandyController();
-    void setup(int videoWidth, int videoHeight);
+    void setup(std::string host1, std::string host2);
     void update(ofPixels& pixels);
     
     void turnOff();

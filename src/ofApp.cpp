@@ -3,21 +3,30 @@
 //--------------------------------------------------------------
 void ofApp::setup(){
     
-    ofSetLogLevel(OF_LOG_VERBOSE);
     ofSetFrameRate(24);
     ofBackground(ofColor::black);
     
-    player.loadMovie("h264-color.mov");
+    settings.loadFile("settings.xml");
+    settings.pushTag("settings");
+    
+    player.loadMovie(settings.getValue("video", ""));
     player.setLoopState(OF_LOOP_NORMAL);
 	player.play();
     
     float aspect = player.getWidth() / player.getHeight();
     ofSetWindowShape(ofGetScreenWidth() / 2, (ofGetScreenWidth() / 2) / aspect);
     
-    leds.setup(player.getWidth(), player.getHeight());
+    std::string leftHost  = settings.getValue("lefthost", "192.168.2.100");
+    std::string rightHost = settings.getValue("lefthost", "192.168.2.101");
+    
+    leds.setup(leftHost, rightHost);
     leds.connect();
     
-    debug = true;
+    debug = settings.getValue("debug", 0);
+    
+    if (debug) {
+        ofSetLogLevel(OF_LOG_VERBOSE);
+    }
 }
 
 //--------------------------------------------------------------

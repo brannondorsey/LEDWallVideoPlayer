@@ -28,6 +28,10 @@
 		E7F985F815E0DEA3003869B5 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7F985F515E0DE99003869B5 /* Accelerate.framework */; };
 		F88A87651B93A9C8004612D1 /* FadeCandyController.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F88A87631B93A9C8004612D1 /* FadeCandyController.cpp */; };
 		F88A876F1B93B689004612D1 /* OPC.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F88A876D1B93B689004612D1 /* OPC.cpp */; };
+		F8A563521B9570E100683DC0 /* ofxXmlSettings.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F8A5634B1B9570E100683DC0 /* ofxXmlSettings.cpp */; };
+		F8A563531B9570E100683DC0 /* tinyxml.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F8A5634E1B9570E100683DC0 /* tinyxml.cpp */; };
+		F8A563541B9570E100683DC0 /* tinyxmlerror.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F8A563501B9570E100683DC0 /* tinyxmlerror.cpp */; };
+		F8A563551B9570E100683DC0 /* tinyxmlparser.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F8A563511B9570E100683DC0 /* tinyxmlparser.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -88,6 +92,12 @@
 		F88A87641B93A9C8004612D1 /* FadeCandyController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FadeCandyController.h; sourceTree = "<group>"; };
 		F88A876D1B93B689004612D1 /* OPC.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = OPC.cpp; sourceTree = "<group>"; };
 		F88A876E1B93B689004612D1 /* OPC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OPC.h; sourceTree = "<group>"; };
+		F8A5634B1B9570E100683DC0 /* ofxXmlSettings.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = ofxXmlSettings.cpp; sourceTree = "<group>"; };
+		F8A5634C1B9570E100683DC0 /* ofxXmlSettings.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ofxXmlSettings.h; sourceTree = "<group>"; };
+		F8A5634E1B9570E100683DC0 /* tinyxml.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = tinyxml.cpp; sourceTree = "<group>"; };
+		F8A5634F1B9570E100683DC0 /* tinyxml.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = tinyxml.h; sourceTree = "<group>"; };
+		F8A563501B9570E100683DC0 /* tinyxmlerror.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = tinyxmlerror.cpp; sourceTree = "<group>"; };
+		F8A563511B9570E100683DC0 /* tinyxmlparser.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = tinyxmlparser.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,6 +130,7 @@
 		BB4B014C10F69532006C3DED /* addons */ = {
 			isa = PBXGroup;
 			children = (
+				F8A563491B9570E100683DC0 /* ofxXmlSettings */,
 			);
 			name = addons;
 			sourceTree = "<group>";
@@ -204,6 +215,37 @@
 				E4328143138ABC890047C5CB /* openFrameworksLib.xcodeproj */,
 			);
 			name = openFrameworks;
+			sourceTree = "<group>";
+		};
+		F8A563491B9570E100683DC0 /* ofxXmlSettings */ = {
+			isa = PBXGroup;
+			children = (
+				F8A5634A1B9570E100683DC0 /* src */,
+				F8A5634D1B9570E100683DC0 /* libs */,
+			);
+			name = ofxXmlSettings;
+			sourceTree = "<group>";
+		};
+		F8A5634A1B9570E100683DC0 /* src */ = {
+			isa = PBXGroup;
+			children = (
+				F8A5634B1B9570E100683DC0 /* ofxXmlSettings.cpp */,
+				F8A5634C1B9570E100683DC0 /* ofxXmlSettings.h */,
+			);
+			name = src;
+			path = ../../../addons/ofxXmlSettings/src;
+			sourceTree = "<group>";
+		};
+		F8A5634D1B9570E100683DC0 /* libs */ = {
+			isa = PBXGroup;
+			children = (
+				F8A5634E1B9570E100683DC0 /* tinyxml.cpp */,
+				F8A5634F1B9570E100683DC0 /* tinyxml.h */,
+				F8A563501B9570E100683DC0 /* tinyxmlerror.cpp */,
+				F8A563511B9570E100683DC0 /* tinyxmlparser.cpp */,
+			);
+			name = libs;
+			path = ../../../addons/ofxXmlSettings/libs;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -294,8 +336,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				E4B69E200A3A1BDC003C02F2 /* main.cpp in Sources */,
+				F8A563531B9570E100683DC0 /* tinyxml.cpp in Sources */,
 				E4B69E210A3A1BDC003C02F2 /* ofApp.cpp in Sources */,
 				F88A876F1B93B689004612D1 /* OPC.cpp in Sources */,
+				F8A563551B9570E100683DC0 /* tinyxmlparser.cpp in Sources */,
+				F8A563521B9570E100683DC0 /* ofxXmlSettings.cpp in Sources */,
+				F8A563541B9570E100683DC0 /* tinyxmlerror.cpp in Sources */,
 				F88A87651B93A9C8004612D1 /* FadeCandyController.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

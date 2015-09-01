@@ -15,10 +15,10 @@ FadeCandyController::~FadeCandyController() {
 //    delete clientFour;
 }
 
-void FadeCandyController::setup(int width, int height){
+void FadeCandyController::setup(std::string host1, std::string host2){
     
-    clientOne   = new OPCClient("192.168.2.103", 7890);
-    clientTwo   = new OPCClient("192.168.2.102", 7890);
+    clientOne   = new OPCClient(host1, 7890);
+    clientTwo   = new OPCClient(host2, 7890);
 //    clientThree = new OPCClient("192.168.2.103", 7890);
 //    clientFour  = new OPCClient("192.168.2.102", 7890);
 }

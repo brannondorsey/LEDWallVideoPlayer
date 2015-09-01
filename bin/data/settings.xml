@@ -1,0 +1,6 @@
+<settings>
+    <lefthost>192.168.2.100</lefthost>
+    <righthost>192.168.2.101</righthost>
+    <video>h264-color.mov</video>
+    <debug>1</debug>
+</settings>
