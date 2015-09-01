@@ -16,8 +16,10 @@ public:
     void setup(int videoWidth, int videoHeight);
     void update(ofPixels& pixels);
     
-//    bool allClientsConnected() const;
-//    bool connect();
+    void turnOff();
+    
+    bool allClientsConnected() const;
+    bool connect();
     
     OPCClient* clientOne;
     OPCClient* clientTwo;

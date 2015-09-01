@@ -60,9 +60,12 @@ void OPCClient::dispose()
         try {
             socket.shutdown();
         } catch(Poco::Exception e) {
-            ofLog(OF_LOG_ERROR, "ofxFadecandy: Poco net exception: ") << e.message();
+            ofLog(OF_LOG_ERROR, "ofxFadecandy: Poco net exception: ");
         }
-        socket.close();
+        
+        try { socket.close(); }
+        catch (Poco::Exception e) { cout << "caught close exception" << endl; };
+            
         bSocketConnected = false;
     }
 }

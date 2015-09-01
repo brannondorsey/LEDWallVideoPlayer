@@ -15,14 +15,21 @@ void ofApp::setup(){
     ofSetWindowShape(ofGetScreenWidth() / 2, (ofGetScreenWidth() / 2) / aspect);
     
     leds.setup(player.getWidth(), player.getHeight());
+    leds.connect();
     
     debug = true;
 }
 
 //--------------------------------------------------------------
 void ofApp::update(){
+   
     player.update();
-    leds.update(player.getPixelsRef());
+    if (leds.allClientsConnected()) {
+        leds.update(player.getPixelsRef());
+    } else {
+        ofLogError("ofApp::update") << "Clients not connected. Exiting.";
+        ofExit();
+    }
 }
 
 //--------------------------------------------------------------
