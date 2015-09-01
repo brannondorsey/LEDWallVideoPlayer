@@ -20,8 +20,6 @@ public:
     
     void update(ofPixels& pixels);
     
-    void turnOff();
-    
     bool allClientsConnected() const;
     bool connect();
     

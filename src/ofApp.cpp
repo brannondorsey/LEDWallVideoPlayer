@@ -9,7 +9,7 @@ void ofApp::setup(){
     settings.loadFile("settings.xml");
     settings.pushTag("settings");
     
-    std::string video = "weekdays/tuesday.mov"; // settings.getValue("video", "");
+    std::string video = settings.getValue("video", "");
     
     if (video == "") {
         video = "weekdays/" + ofToString(ofClamp(ofGetWeekday(), 1, 5)) + ".mov";
