@@ -23,14 +23,14 @@ void FadeCandyController::setup(int width, int height){
 //    clientFour  = new OPCClient("192.168.2.102", 7890);
 }
 
-//bool FadeCandyController::connect() {
-//    
-//    if (!clientOne->isConnected())   clientOne->connect();
-//    if (!clientTwo->isConnected())   clientTwo->connect();
+bool FadeCandyController::connect() {
+    
+    if (!clientOne->isConnected())   clientOne->connect();
+    if (!clientTwo->isConnected())   clientTwo->connect();
 //    if (!clientThree->isConnected()) clientThree->connect();
 //    if (!clientFour->isConnected())  clientFour->connect();
-//    return allClientsConnected();
-//}
+    return allClientsConnected();
+}
 
 void FadeCandyController::update(ofPixelsRef pixels){
     
@@ -88,9 +88,9 @@ void FadeCandyController::update(ofPixelsRef pixels){
     
 }
 
-//bool FadeCandyController::allClientsConnected() const {
-//    return clientOne->isConnected() &&
-//           clientTwo->isConnected() &&
+bool FadeCandyController::allClientsConnected() const {
+    return clientOne->isConnected() &&
+           clientTwo->isConnected();
 //           clientThree->isConnected() &&
 //           clientFour->isConnected();
-//}
+}
