@@ -1,0 +1,1 @@
+0 7 * * 1-5 ~/src/of_v0.8.4_linux64_release/apps/dolby/WallVideoPlayer/bin/start_installation.sh & >/dev/null 2>&1
