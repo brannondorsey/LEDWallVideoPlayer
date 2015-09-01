@@ -8,6 +8,7 @@ void ofApp::setup(){
     ofBackground(ofColor::black);
     
     player.loadMovie("h264-color.mov");
+    player.setLoopState(OF_LOOP_NORMAL);
 	player.play();
     
     float aspect = player.getWidth() / player.getHeight();
