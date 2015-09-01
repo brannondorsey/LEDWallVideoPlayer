@@ -52,10 +52,8 @@ void ofApp::update(){
 //--------------------------------------------------------------
 void ofApp::draw(){
     
-    if (debug) {
-        ofSetColor(255, 255, 255);
-        player.draw(0, 0, ofGetWidth(), ofGetHeight());
-    }
+    ofSetColor(255, 255, 255);
+    player.draw(0, 0, ofGetWidth(), ofGetHeight());
 
     ofDrawBitmapStringHighlight(ofToString( (int) ofGetFrameRate()) + " FPS", 5, 15);
 }
